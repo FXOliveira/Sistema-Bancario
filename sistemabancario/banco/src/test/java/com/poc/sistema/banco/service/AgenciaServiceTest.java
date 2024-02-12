@@ -22,7 +22,6 @@ class AgenciaServiceTest {
         agencia.setId(1L);
         agencia.setNome("Agencia X");
         agencia.setTelefone("12121212");
-        agencia.setEndereco(new Endereco("Rua Emiliano Afonso","São João", "123"));
 
         Mockito.when(agenciaService.getById(anyLong())).thenReturn(agencia);
 

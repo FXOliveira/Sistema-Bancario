@@ -22,7 +22,6 @@ public class ClienteService implements CrudInterface<Cliente> {
         Cliente cli = clienteRepository.findById(id).get();
         cli.setNome(cliente.getNome());
         cli.setTelefone(cliente.getTelefone());
-        cli.setEndereco(cliente.getEndereco());
         cli.setCpf(cliente.getCpf());
         clienteRepository.save(cli);
         return cli;

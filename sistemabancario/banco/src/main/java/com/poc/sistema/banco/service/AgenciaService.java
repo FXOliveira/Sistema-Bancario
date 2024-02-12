@@ -17,6 +17,16 @@ public class AgenciaService implements CrudInterface<Agencia> {
     public void create(Agencia agencia) {
         agenciaRepository.save(agencia);
     }
+
+    public Agencia update(Long id, Agencia agencia){
+       Agencia ag = agenciaRepository.findById(id).get();
+       ag.setNome(agencia.getNome());
+       ag.setTelefone(agencia.getTelefone());
+       ag.setEndereco(agencia.getEndereco());
+       agenciaRepository.save(ag);
+       return ag;
+    }
+
     @Override
     public List<Agencia> getAll() {
         List<Agencia> agenciaList = new ArrayList<>();
